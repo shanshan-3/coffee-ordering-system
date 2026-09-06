@@ -1,4 +1,4 @@
-<header class="w-full border-b border-stone-900/10">
+<div class="w-full border-b border-stone-900/10">
     <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
         <a href="/ordering-system/index.php" class="text-2xl font-display font-semibold tracking-tight flex items-center gap-2">
             <svg class="w-7 h-7 text-stone-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -28,6 +28,22 @@
                 
             </form>
 
+            <form action="/ordering-system/cart.php" method="GET" class="relative">
+                <button type="submit" class="relative">
+                    <svg class="w-5 h-5 text-stone-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="9" cy="21" r="1" />
+                        <circle cx="20" cy="21" r="1" />
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                    </svg>
+                    <?php
+                    // Display the number of items in the cart
+                    $cartCount = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
+                    if ($cartCount > 0) {
+                        echo '<span class="absolute -top-2 -right-2 bg-amber-600 text-white text-xs font-semibold rounded-full w-5 h-5 flex items-center justify-center">' . $cartCount . '</span>';
+                    }
+                    ?>
+                </button>
+            </form>
 
             <a href="/ordering-system/auth/signin.php"
                 class="px-5 py-2 rounded-full bg-amber-600 text-white font-sans font-medium tracking-tight hover:bg-amber-500 transition">
@@ -35,4 +51,4 @@
             </a>
         </div>
     </nav>
-</header>
+</div>

@@ -7,4 +7,12 @@
   --font-display: "Fraunces", Georgia, serif;
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 }
+@layer base {
+  html, body {
+    background-color: #FAF6F0;
+  }
+  body {
+    @apply text-stone-900 font-sans antialiased;
+  }
+}
 </style>
