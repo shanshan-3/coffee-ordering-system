@@ -1,2 +1,2 @@
-.agents/
-skills-lock.json
+config/database.php
+uploads/products/*
